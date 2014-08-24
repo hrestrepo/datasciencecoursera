@@ -21,11 +21,12 @@ if (!"scc" %in% dir()) {
 ## (fips == "24510") from 1999 to 2008? Use the base plotting system to make a 
 ## plot answering this question.
 
-BaltCity <- nei[nei$fips == "24510", ] 
+BaltCity <- subset(nei, fips == "24510")
+
+TotalYear <- tapply(BaltCity$Emissions, BaltCity$year, sum)
 
 png("plot2.png",width = 480, height = 480)
-barplot(tapply(X=BaltCity$Emissions, INDEX=BaltCity$year, FUN=sum), 
-        main='Total Emission in Baltimore City', 
-        xlab='Year', ylab=expression('Total PM'[2.5]*" Emissions (tons)"))
-
+plot(names(TotalYear), TotalYear, type="l",
+     xlab="Year", ylab=expression('Total PM'[2.5]*" Emissions (tons)"),
+     main=expression("Total Emission in Baltimore City - 1999 to 2008"))
 dev.off()
