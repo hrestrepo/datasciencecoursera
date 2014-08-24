@@ -19,8 +19,7 @@ if (!"scc" %in% dir()) {
 ## 2008? Using the base plotting system, make a plot showing the total PM2.5 
 ## emission from all sources for each of the years 1999, 2002, 2005, and 2008.
 
-png("plot1.png", 
-    width = 480, height = 480)
+png("plot1.png", width = 480, height = 480)
 total <- aggregate(nei$Emissions, list(nei$year), FUN = "sum")
 
 plot(total, type = "l", xlab = "Year", 
