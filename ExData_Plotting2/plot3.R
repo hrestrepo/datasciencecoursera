@@ -32,6 +32,6 @@ par("mar"=c(5.1, 4.5, 4.1, 2.1))
 png("plot3.png",width = 480, height = 480)
 g <- ggplot(BaltCity, aes(year, Emissions, color = type))
 g  +geom_line(stat = "summary", fun.y = "sum") + 
-        ylab(expression('Total PM'[2.5]*" Emissions")) +
+        ylab(expression('Total PM'[2.5]*" Emissions (tons)")) +
         ggtitle("Total Emissions per Type in Baltimore City - 1999 to 2008")
 dev.off()

@@ -32,12 +32,12 @@ TotBaltData <- aggregate(BaltVeh$Emissions, by = list(BaltVeh$year), FUN = sum)
 
 ## Plotting data
 
-png("plot5.png",width = 480, height = 480)
+png("plot5.png",width = 480, height = 480,bg = "transparent")
 
 ggplot(TotBaltData, aes(Group.1, x)) + 
         geom_line() + 
         labs(title = "Baltimore Motor Vehicles' Emissions\n 1999 to 2008", 
-             x = "Year", y = expression("PM" [2.5] ~ "Emitted (tons)"))
+             x = "Year", y = expression('Total PM'[2.5]*" Emissions (tons)"))
 dev.off()
 
 

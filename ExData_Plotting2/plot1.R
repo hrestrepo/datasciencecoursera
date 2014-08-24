@@ -24,5 +24,5 @@ total <- aggregate(nei$Emissions, list(nei$year), FUN = "sum")
 
 plot(total, type = "l", xlab = "Year", 
      main = "Total Emissions in US - 1999 to 2008", 
-     ylab = expression('Total PM'[2.5]*" Emission"))
+     ylab = expression('Total PM'[2.5]*" Emissions (tons)"))
 dev.off()

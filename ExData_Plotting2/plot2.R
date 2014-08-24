@@ -25,7 +25,7 @@ BaltCity <- nei[nei$fips == "24510", ]
 
 png("plot2.png",width = 480, height = 480)
 barplot(tapply(X=BaltCity$Emissions, INDEX=BaltCity$year, FUN=sum), 
-        main='Total Emission in Baltimore City, MD', 
-        xlab='Year', ylab=expression('PM'[2.5]))
+        main='Total Emission in Baltimore City', 
+        xlab='Year', ylab=expression('Total PM'[2.5]*" Emissions (tons)"))
 
 dev.off()

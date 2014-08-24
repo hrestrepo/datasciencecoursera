@@ -37,7 +37,7 @@ png("plot4.png",width = 480, height = 480)
 ggplot(data=mergesum, aes(x=Year, y=Emissions)) + 
         geom_line(aes(group=1, col=Emissions)) +  
         ggtitle(expression("Total Emissions From Coal Combustion-related\n Sources in US - 1999 to 2008")) + 
-        ylab(expression(paste('PM', ''[2.5], ' in tons'))) + 
+        ylab(expression(paste('Total PM'[2.5]*" Emissions (tons)"))) + 
         theme(legend.position='none') + scale_colour_gradient(low='black', high='blue')
 
 dev.off()
